@@ -37,7 +37,7 @@ module rest_main ()
 module screwholes ()
 {
 	mcad_mirror_duplicate (X) {
-		translate ([screw_dist / 2, 0]) 
+		translate ([screw_dist / 2, screw / 2]) 
 			mcad_bolt_hole_with_nut ( size = 6,
 									  length = 30,
 									  align_with = "above_head",

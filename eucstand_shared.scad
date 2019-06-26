@@ -36,4 +36,4 @@ cut_hei = rest_hei - cut - (cut_rnd * 2);
 //heifactor = 
 
 screw = 5;
-screw_dist = rest_len - cut + screw;
+screw_dist = rest_len - rest_bor - screw;
