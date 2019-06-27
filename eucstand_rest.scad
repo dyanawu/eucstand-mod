@@ -37,13 +37,15 @@ screw_dist = rest_len - rest_bor - screw;
 
 module screwhole ()
 {
-	mcad_bolt_hole_with_nut ( size = 6,
-							  length = 30,
-							  align_with = "above_head",
-							  nut_projection = "radial",
-							  screw_extra_length = 10,
-							  head_extra_length = 5,
-							  nut_projection_length = rest_thi);
+	mcad_bolt_hole_with_nut (size = screw,
+							 length = 30,
+							 align_with = "above_head",
+							 nut_projection = "radial",
+							 bolt_tolerance = 0.1,
+							 screw_extra_length = 10,
+							 head_extra_length = 5,
+							 nut_tolerance = 0.1,
+							 nut_projection_length = rest_thi);
 }
 
 module rest_outer ()
@@ -85,8 +87,8 @@ module arrange_screwhole () {
 	mcad_mirror_duplicate (X) {
 		translate ([screw_dist / 2, screw / 2])
 			screwhole ();
-			}
 	}
+}
 
 module assemble_rest ()
 {
